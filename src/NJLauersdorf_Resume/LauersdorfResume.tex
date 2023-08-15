@@ -1,0 +1,276 @@
+% Inspired by SixtySecondsCV LaTeX template
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	%maincolor=cvgreen,
+	sidecolor=gray!50,
+	sectioncolor=materialblue,
+	subsectioncolor=materialindigo,
+	% itemtextcolor=black!80,
+	% sidebarwidth=0.4\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	profilepicsize=3.5cm,
+	% profilepicborderwidth=3.5pt,
+	profilepicstyle=profilecircle,
+	profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+	% logowidth=4.5cm,
+	% logospace=5mm,
+	% logoposition=before,
+]{LauersdorfResume}
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {materiallime, materialamber,
+	materialcyan, materialblue, materialindigo},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+\newcommand{\italicitem}[1]{\item{\textit{#1}}}
+\newcommand{\bolditem}[1]{\item{\textbf{#1}}}
+\newcommand{\plainitem}[1]{\item{#1}}
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{Nick Lauersdorf}
+% job title/career
+\cvjobtitle{Computational Physicist \\[0.2em] and Data Scientist }
+
+\write18{wget https://ipfs.io/ipfs/QmZiD898vX1yaukukNbgbuSoUtqVRD262k4qK4xWB523LM?filename=QmZiD898vX1yaukukNbgbuSoUtqVRD262k4qK4xWB523LM.png}
+
+%% optional information
+% profile picture
+\cvprofilepic{img/head_shot.png}
+% logo picture
+%\cvlogopic{pics/logo_txt.png}
+
+% NOTE: ordering in sidebar will mimic the following order
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{Alpharetta, GA}
+% phone number
+\cvphone{(608) 852-6337}
+% personal website
+\cvsite{https://www.njlauersdorf.com}
+% email address
+\cvmail{njlauersdorf@gmail.com}
+
+\newcommand\myfontsize{\fontsize{11pt}{18pt}\selectfont}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Social Network}
+		\begin{icontable}{2.5em}{1em}
+			\social{\aiResearchGate}
+				{https://www.researchgate.net/profile/Nicholas-Lauersdorf}
+				{ResearchGate Profile}
+			\social{\faGithub}
+				{https://github.com/njlauersdorf}
+				{Github Profile}
+		\end{icontable}
+
+	\profilesection{Languages}
+		\pointskill{\faPython}{Python}{5}
+            \pointskill{\includesvg{img/matlab.svg}}{MATLAB}{3}
+            \pointskill{\includesvg{img/sql.svg}}{SQL}{3}
+    	\pointskill{\includesvg{img/c-plus-plus.svg}}{C++}{2}
+	    \pointskill{\includesvg{img/html-fill.svg}}{HTML}{2}
+            \pointskill{\includesvg{img/css-fill.svg}}{CSS}{2}
+            \pointskill{\includesvg{img/language-javascript.svg}}{Javascript}{2}
+
+        \profilesection{Tools}
+		\pointskill{\includesvg{img/circle-half-full.svg}}{HOOMD-Blue}{5}
+            \pointskill{\includesvg{img/wolfram-mathematica.svg}}{Mathematica}{5}
+            \pointskill{\includesvg{img/graph-fill.svg}}{Model Development}{4}
+            \pointskill{\includesvg{img/logo-tableau.svg}}{Tableau}{4}
+	    \pointskill{\includesvg{img/scikit-learn.svg}}{Scikit-learn}{3}
+            \pointskill{\includesvg{img/opencv.svg}}{OpenCV}{3}
+            \pointskill{\includesvg{img/microsoft-azure.svg}}{Microsoft Azure}{3}
+            \pointskill{\includesvg{img/seaborn-icon.svg}}{Seaborn}{3}
+            \pointskill{\includesvg{img/pytorch.svg}}{Pytorch}{2}
+            \pointskill{\includesvg{img/tensorflow.svg}}{Tensorflow}{1}
+
+        \profilesection{Interests}
+            \pointskill{\includesvg{img/controller-variant.svg}}{Video Games}{5}
+            \pointskill{\includesvg{img/menu-book.svg}}{Comic Collecting}{5}
+	    \pointskill{\includesvg{img/video-film.svg}}{Film}{5}            
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+% Define navyblue color
+\definecolor{navyblue}{RGB}{0,54,123}
+
+\cvsection{Objective}
+	\aboutme{
+	Computational Physicist seeking to apply 9-years of modeling and simulation, data science, and software development experience to a career in industry. Extensive experience developing physics-based models, writing algorithms to statistically analyze big data, and designing intuitive visualizations to share significant findings.}
+\vspace{-5mm}
+
+\cvsection{Education}
+\bulletitem{\myfontsize 2019 -- 2024}{\myfontsize PhD in Materials Science}{\myfontsize UNC-Chapel Hill}
+\vspace{-2mm}
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt} 
+    \item Graduate business certificate in Innovation, Leadership, \& Management
+    \item Fully paid for 3-years of graduate career by winning the Department of Defense (DoD) National Defense Science \& Engineering Graduate (NDSEG) Fellowship
+\end{itemize}
+\vspace{-1mm}
+\bulletitem{\myfontsize 2014 -- 2018}{\myfontsize B.S. in Physics and Mathematics}{\myfontsize UW-Madison}
+\vspace{-2mm}
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt} 
+    \item GPA: 3.60
+\end{itemize}
+\vspace{-5mm}
+
+\cvsection{Experience}
+\cvsubsection{Research \& Programming}
+
+\bulletitem{\myfontsize 2020 -- current}{\myfontsize Computational Physicist}{\myfontsize UNC-Chapel Hill}
+\vspace{-2mm}
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt} 
+    \item Discovered meta-stable states of phase separation (clustering) for active Brownian particle mixtures via C++ molecular dynamics simulations 
+    \item Determined phase boundary between stable and meta-stable clusters by training logistic regression machine learning model 
+    \item Allowed differentiation of bulk and interface of cluster by writing local translational and orientational order-based clustering algorithm
+    \item Enabled design of non-equilibrium steady-states by deriving predictive statistical mechanics theory
+
+\end{itemize}
+\vspace{-1mm}
+\bulletitem{\myfontsize 2019 -- 2021}{\myfontsize Data Scientist}{\myfontsize BeAM Makerspaces}
+\vspace{-2mm}
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt} 
+    \item Enabled cost-efficient scheduling and targeted marketing by developing Tableau workbooks and SQL queries for statistical analysis of user demographics
+    \item Improved end-user experience of staff by leading beta testing of analytics software
+    \item Increased monthly first-time users by 15\% by designing marketing visualizations
+    \item Led team that created a campus-wide inventory tracking system and database
+\end{itemize}
+\vspace{-1mm}
+\bulletitem{\myfontsize 2019 -- 2020}{\myfontsize Experimental Physicist}{\myfontsize UNC-Chapel Hill}
+\vspace{-2mm}
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt} 
+    \item Expanded lab's presence by forming and managing a collaboration network with numerous national labs
+    \item Taught photodetectors to developing scientists by publishing textbook chapter
+\end{itemize}
+\vspace{-1mm}
+\bulletitem{\myfontsize 2018 -- 2019}{\myfontsize Assistant Scientist}{\myfontsize Pharmaeutical Product Development}
+\vspace{-2mm}
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt} 
+    \item Increased customer satisfaction by writing FDA-regulated reports 
+\end{itemize}
+\vspace{-1mm}
+\bulletitem{\myfontsize 2016 -- 2018}{\myfontsize Computational Physicist}{\myfontsize UW-Madison}
+\vspace{-2mm}
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt} 
+    \item Enabled accurate prediction of fusion plasma properties by developing a Bayesian statistics model in Python
+    \item Increased efficiency of model by 40\% through converting iterations over lists to multi-dimensional tensor mathematics
+    \item Enabled user-friendly design of x-ray detector optics by developing multi-variable optimization routines to maximize signal
+    \item Increased measurement capabilities of scientists by designing x-ray detector that removes undesirable noise from measurements 
+\end{itemize}
+
+\vspace{-5mm}
+
+
+\cvsubsection{Teaching \& Mentoring}
+\bulletitem{\myfontsize 2022 -- current}{\myfontsize STEM Mentor}{\myfontsize Junior Science \& Humanities Symposium}
+\vspace{-2mm}
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt} 
+    \item Earned \$8,000 for two mentees' college funds by placing second at nationals with data science and machine learning research projects
+\end{itemize}
+\bulletitem{\myfontsize 2020 -- 2021}{\myfontsize Teaching Assistant}{\myfontsize UNC-Chapel Hill}
+\vspace{-2mm}
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt} 
+    \item Introduced others to programming by leading lectures on MATLAB and Python
+    \item Designed molecular dynamics models by overseeing research projects
+\end{itemize}
+
+\vspace{-5mm}
+
+\cvsection{Awards}
+\bulletitem{2021 -- 2024}{NDSEG Research Fellowship [\$165,000]}{Department of Defense}
+\bulletitem{2021}{First Place Presentation}{Triangle Student Research Competition}
+\bulletitem{2014 -- 2018}{Theodore Herfurth Scholarship [\$40,000]}{UW-Madison}
+
+\end{document}
