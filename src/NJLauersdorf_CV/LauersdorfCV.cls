@@ -28,7 +28,8 @@
 	nofoot,
 	nomarginpar,
 ]{geometry}
-
+\RequirePackage{iftex}
+\RequireLuaTeX
 % pre-define some colors the user can choose from
 
 \definecolor{white}{RGB}{255,255,255}
