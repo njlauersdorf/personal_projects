@@ -7,7 +7,7 @@ import cv2
 
 # Path to data
 path = os.getcwd()
-data_direct = os.path.abspath(os.path.join(path, os.pardir)) + '/res/'
+data_direct = os.path.abspath(os.path.join(path, os.pardir)) + '/res/face_detection/'
 
 # Load trained data on fronts of faces from opencv (haar cascade algorithm)
 trained_face_data = cv2.CascadeClassifier(data_direct + 'haarcascade_frontalface_default.xml')

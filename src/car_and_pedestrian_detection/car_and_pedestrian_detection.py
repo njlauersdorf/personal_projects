@@ -5,7 +5,7 @@ import os
 import cv2
 
 path = os.getcwd()
-data_direct = os.path.abspath(os.path.join(path, os.pardir)) + '/res/'
+data_direct = os.path.abspath(os.path.join(path, os.pardir)) + '/res/car_and_pedestrian_detection/'
 
 # Load trained data on cars from opencv (haar cascade algorithm)
 trained_car_data = cv2.CascadeClassifier(data_direct + 'car_detector.xml')

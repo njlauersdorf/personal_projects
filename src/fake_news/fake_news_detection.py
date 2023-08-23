@@ -14,7 +14,7 @@ import matplotlib.ticker as ticker
 
 #Read CSV data file
 path = os.getcwd()
-data_direct = os.path.abspath(os.path.join(path, os.pardir)) + '/res/'
+data_direct = os.path.abspath(os.path.join(path, os.pardir)) + '/res/fake_news/'
 
 df = pd.read_csv(data_direct + 'news.csv')
 
