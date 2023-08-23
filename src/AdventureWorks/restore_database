@@ -1,0 +1,4 @@
+mkdir /home/sqlite
+chmod daemon /home/sqlite
+touch sample.db
+chmod daemon /home/sqlite/sample.db
